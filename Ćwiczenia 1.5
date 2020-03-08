@@ -1,0 +1,10 @@
+//5.	Stwórz mapę z nazwami produktów i cenami. 
+//Na jej podstawie wygeneruj drugą, z 10% obniżką cen. Wykorzystaj mechanizm mapowania kolekcji. 
+import scala.collection.mutable.Map
+
+val products = Map("masło" -> 8.0, "kiełbasa" -> 10.0)
+var p = scala.collection.mutable.Map[String, Double]()
+for (n <- products){
+  p+=(n._1 -> n._2*0.9)
+} 
+println(p)
