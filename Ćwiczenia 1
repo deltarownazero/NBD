@@ -1,0 +1,31 @@
+//zad 1
+val week = List("pon", "wt", "śr", "czw", "pt", "sob", "ndz")
+var all = ""
+var i=1
+
+for (n <- week){
+  all=all+n
+  if(i<7)
+  all=all+","
+  i=i+1
+} 
+println(all)
+
+all=""
+for (n <- week){
+  if(n(0)=='p')
+  all=all+n+","
+}
+all = all.dropRight(1)
+println(all)
+
+all=""
+i = 0
+val s = week.size
+while (i < s) {
+  all=all+week(i)
+  if(i<6)
+  all=all+","
+  i=i+1
+}
+println(all)
