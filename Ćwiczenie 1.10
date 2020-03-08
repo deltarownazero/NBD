@@ -1,0 +1,29 @@
+//10.	Stwórz funkcję przyjmującą listę liczb rzeczywistych i zwracającą stworzoną na jej podstawie 
+//listę zawierającą wartości bezwzględne 
+//elementów z oryginalnej listy należących do przedziału <-5,12>. Wykorzystaj filtrowanie
+
+import scala.collection.mutable.ListBuffer
+val numbers = List(-20.0, 11.5, -7.4, 5.1, -5.0, 13.0, 0.0)
+
+def fun (numbers: List[Double]):Unit ={
+  val numbers2=numbers.filter(_ <=12).filter(_>=(-5.0))
+  
+  val numbers3 = ListBuffer[Double]()
+  for (n <- numbers2){
+    if(n<0.0)
+      numbers3 += n*(-1)
+    else{
+      numbers3 += n
+    }
+    val numbers4 = numbers3.toList
+    println(numbers4)
+  } 
+}
+fun(numbers)
+
+
+
+
+
+
+
