@@ -1,0 +1,63 @@
+import scala.collection.mutable.ListBuffer
+
+var week = List("pon", "wt", "śr", "czw", "pt", "sob", "ndz")
+var all =""
+
+def deleteFirst(week: List[String]): ListBuffer[String] ={
+  var week2 = ListBuffer[String]()
+  var i=0
+  for (n <- week){
+    if(i>0)
+      week2 += week(i)
+    i=i+1
+  }  
+return week2
+}
+
+def makeString(week: List[String], all: String): String ={
+  var i = week.size
+  if(i==1)
+    return all+week(0)
+  var all2 = all+week(0)+","
+  var week2 = deleteFirst(week)
+  var week3 = week2.toList
+  makeString(week3, all2)
+}
+
+all = makeString(week, all)
+
+println(all)
+///////
+
+
+
+import scala.collection.mutable.ListBuffer
+
+var week = List("pon", "wt", "śr", "czw", "pt", "sob", "ndz")
+var all =""
+
+def deleteLast(week: List[String]): ListBuffer[String] ={
+  var week2 = ListBuffer[String]()
+  var i=0
+  for (n <- week){
+    if(i<week.size-1)
+      week2 += week(i)
+    i=i+1
+  }  
+  println(week2)
+return week2
+}
+
+def makeString(week: List[String], all: String): String ={
+  var i = week.size
+  if(i==1)
+    return all+week(0)
+  var all2 = all+week(week.size-1)+","
+  var week2 = deleteLast(week)
+  var week3 = week2.toList
+  makeString(week3, all2)
+}
+
+all = makeString(week, all)
+
+println(all)
