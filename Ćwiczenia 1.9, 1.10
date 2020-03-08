@@ -1,3 +1,21 @@
+//9.	Zdefiniuj funkcję, przyjmującą listę liczb całkowitych i zwracającą wygenerowaną na jej podstawie listę, 
+//w której wszystkie liczby zostały zwiększone o 1. Wykorzystaj mechanizm mapowania kolekcji
+
+import scala.collection.mutable.ListBuffer
+val numbers = List(0, 1, 2, 5, 4, 9, 7)
+
+List(1, 2, 3, 4) map (n => 10 * n)
+
+
+def fun (numbers: List[Int]):List[Int] ={
+  val numbers2 = numbers map (n=> n+1)
+  println(numbers2)
+  return numbers2
+}
+fun(numbers)
+
+
+
 //10.	Stwórz funkcję przyjmującą listę liczb rzeczywistych i zwracającą stworzoną na jej podstawie 
 //listę zawierającą wartości bezwzględne 
 //elementów z oryginalnej listy należących do przedziału <-5,12>. Wykorzystaj filtrowanie
@@ -20,10 +38,3 @@ def fun (numbers: List[Double]):Unit ={
   } 
 }
 fun(numbers)
-
-
-
-
-
-
-
