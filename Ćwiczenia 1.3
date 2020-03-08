@@ -1,0 +1,27 @@
+val week = List("pon", "wt", "śr", "czw", "pt", "sob", "ndz")
+var all = ""
+var i = 0
+week.foldLeft(""){(z,f)=>
+  i=i+1
+  if(i<7)
+    z+f+","
+  else
+    z+f
+}
+week.foldRight(""){(z,f)=>
+  i=i+1
+  if(i>8)
+    z+","+f
+  else
+    z+f
+}
+var week2 = week.foldLeft(""){(z,f)=>
+  i=i+1
+  if(f(0)=='p')
+    z+f+","
+  else
+  z+""
+}
+week2.dropRight(1)
+
+
