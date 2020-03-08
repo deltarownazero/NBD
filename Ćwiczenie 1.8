@@ -1,0 +1,32 @@
+//8.	Napisz funkcję usuwającą zera z listy wartości całkowitych 
+//(tzn. zwracającą listę elementów mających wartości różne od 0).  Wykorzystaj rekurencję
+import scala.collection.mutable.ListBuffer
+val numbers = List(0, 2, 0, 1, -5, 4, 0)
+
+def delete(numbers: List[Int], x: Int): ListBuffer[Int] ={
+  var numbers2 = ListBuffer[Int]()
+  var i=0
+  for (n <- numbers){
+    if(i!=x)
+      numbers2 += numbers(i)
+    i=i+1
+  }  
+return numbers2
+}
+
+//x - sprawdzane id
+def fun(numbers: List[Int], x:Int): List[Int] ={
+  
+  //warunek konczacy
+  if(x>numbers.size-1)
+    return numbers
+  
+  if(numbers(x)==0){
+    val numbers2=delete(numbers, x)
+    val numbers3 = numbers2.toList
+    return fun(numbers3, x+1)
+  }
+  return fun(numbers, x+1)
+  
+}
+fun(numbers, 0)
