@@ -8,3 +8,16 @@ for (n <- products){
   p+=(n._1 -> n._2*0.9)
 } 
 println(p)
+
+
+
+//Zdefiniuj funkcję przyjmującą krotkę z 3 wartościami różnych typów i wypisującą je
+val t = Tuple3(3, "abc", 5.5)
+
+def krotka(t: (Int, String, Double) ): Unit ={
+  println(t._1)
+  println(t._2)
+  println(t._3)
+  
+}
+krotka(t)
