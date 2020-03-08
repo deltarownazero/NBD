@@ -21,3 +21,13 @@ def krotka(t: (Int, String, Double) ): Unit ={
   
 }
 krotka(t)
+
+
+//Zaprezentuj działanie Option na dowolnym przykładzie (np. mapy, w której wyszukujemy wartości po kluczu)
+import scala.collection.mutable.Map
+val products = Map("masło" -> 8.0, "kiełbasa" -> 10.0)
+
+products.get("masło")
+products.get("mydło")
+products.getOrElse("masło", "mydło")
+products.getOrElse("mydło", 2.0)
