@@ -47,3 +47,33 @@ konto.stanKonta
 var konto2 = new KontoBankowe("zero")
 konto2.stanKonta
 
+
+//3.	Zdefiniuj klasę Osoba z własnościami imie i nazwisko. Stwórz kilka instancji tej klasy. 
+//Zdefiniuj funkcję, która przyjmuje obiekt klasy osoba i przy pomocy Pattern Matching 
+//wybiera i zwraca napis zawierający przywitanie danej osoby. 
+//Zdefiniuj 2-3 różne przywitania dla konkretnych osób (z określonym imionami lub nazwiskami) oraz jedno domyślne.
+
+
+
+class Osoba (val imie: String, val nazwisko : String){
+  
+}
+
+var a = new Osoba ("Adam", "Asiński")
+var b = new Osoba ("Bartek", "Beksiński")
+var c = new Osoba ("Celina", "Cesiński")
+
+
+def fun(x: Osoba): Unit ={
+  
+  x.imie match{
+    
+    case "Adam" => println("Hej Adam")
+    case "Bartek" => println("Cześć Bartek")
+    case _ => println("Witaj "+x.imie)
+  }
+}
+
+fun(a)
+fun(b)
+fun(c)
