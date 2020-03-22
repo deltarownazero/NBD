@@ -77,3 +77,26 @@ def fun(x: Osoba): Unit ={
 fun(a)
 fun(b)
 fun(c)
+
+
+//4.	Zdefiniuj funkcję przyjmującą dwa parametry - wartość całkowitą i funkcję operującą na wartości 
+//całkowitej. Zastosuj przekazaną jako parametr funkcję trzykrotnie do wartości całkowitej i zwróć wynik.
+
+def potega(x: Int): Int ={
+  return x*x
+}
+
+
+def fun(x: Int, potega: Int => Int): Unit ={
+  var y = potega(x)
+  println(y)
+  var z = potega(y)
+  println(z)
+  z = potega(z)
+  println(z)
+}
+fun(2, potega)
+
+
+
+
