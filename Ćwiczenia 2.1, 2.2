@@ -1,0 +1,49 @@
+//1.	Wykorzystaj Pattern Matching w funkcji przyjmującej parametr typu String. 
+//Dla stringów odpowiadających nazwom dni tygodnia funkcja ma zwrócić „Praca” i „Weekend” 
+//(odpowiednio dla dni roboczych i wolnych), dla pozostałych napisów „Nie ma takiego dnia”.
+
+
+def fun(x: String): Unit = {
+  x match{
+    
+    case "pon" | "wt" | "śr" | "czw" | "pt"=> println("Praca")
+    case "sob" | "ndz" => println("Weekend")
+    case _ => println("Nie ma takiego dnia")
+    
+  }
+}
+fun("pon")
+fun("ndz")
+fun("blabla")
+
+
+//2.	Zdefiniuj klasę KontoBankowe z metodami wplata i wyplata oraz własnością stanKonta - 
+//własność ma być tylko do odczytu. Klasa powinna udostępniać konstruktor przyjmujący początkowy stan konta 
+//oraz drugi, ustawiający początkowy stan konta na 0.
+
+class KontoBankowe(val stanPoczatkowy: Int){
+  private var _stanKonta = stanPoczatkowy
+  
+  def this(stanPoczątkowy: String){
+    this(0)
+  }
+  
+  def stanKonta = _stanKonta
+  
+  def wplata(x: Int): Unit ={
+    _stanKonta = _stanKonta + x
+  }
+  def wyplata(x: Int): Unit ={
+    _stanKonta =_stanKonta - x
+  }
+}
+
+var konto = new KontoBankowe(50)
+konto.stanKonta
+konto.wplata(10)
+konto.stanKonta
+konto.wyplata(10)
+konto.stanKonta
+var konto2 = new KontoBankowe("zero")
+konto2.stanKonta
+
